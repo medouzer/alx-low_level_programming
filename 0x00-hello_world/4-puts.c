@@ -7,5 +7,5 @@ int main(void)
 
 	puts(sentence);
 
-	return;	
+	return 4;	
 }

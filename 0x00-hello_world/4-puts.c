@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int main()
+int main(void)
 {
 	char sentence[] = "Programming is like building a multilingual puzzle";
 

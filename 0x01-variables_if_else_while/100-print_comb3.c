@@ -17,8 +17,11 @@ int main(void)
 		{
 			putchar('0' + n);
 			putchar('0' + p);
-			putchar(',');
-			putchar(' ');
+			if (n != 8)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 		g++;
 	}

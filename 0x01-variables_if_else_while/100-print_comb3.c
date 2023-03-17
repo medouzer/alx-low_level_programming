@@ -9,21 +9,22 @@ int main(void)
 {
 	int n;
 	int p;
-	int g = 1;
+	int g;
 
 	for (n = 0; n <= 9; n++)
 	{
-		for (p = g; p <= 9; p++)
+		for (p = n + 1; p <= 9; p++)
 		{
+			for (g = p + 1; g <= 9; g++)
 			putchar('0' + n);
 			putchar('0' + p);
-			if (n != 8)
+			putchar('0' + g);
+			if (n != 7)
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
-		g++;
 	}
 
 	putchar('\n');

@@ -1,11 +1,18 @@
 #include "main.h"
 
 /**
- * reset_to_98 - take pointer to an int as parameter
- * @n: the pointer
+ * print_rev - print string in revers
+ * @s: is the string
  */
 
-void reset_to_98(int *n)
+void print_rev(char *s)
 {
-	*n = 98;
+	int len, i;
+
+	len = _strlen(s);
+
+	for (i = len - 1; i >= 0; i--)
+		_putchar(s[i]);
+
+	_putchar('\n');
 }

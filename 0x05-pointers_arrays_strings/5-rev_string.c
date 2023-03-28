@@ -5,4 +5,4 @@
  * @s: string
  */
 
-
+void rev_string

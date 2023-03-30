@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * *_strcat - concatenates two string
- * @dest: string 1
- * @src: string 2
- * Return: return the string dest
+ * *string_toupper - switch string from lower to upper
+ * @str: is the string
+ * Return: return the string str upper
  */
 
 char *string_toupper(char *str)

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *_reverse_array - concatenates two string
+ * reverse_array - reverse array
  * @a: array to reverse
  * @n: number of elements if the array
  * Return: return the string dest

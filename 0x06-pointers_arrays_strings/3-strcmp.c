@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *_strcmp - concatenates two string
+ * *_strcmp - compares two string
  * @s1: string 1
  * @s2: string 2
  * Return: return the string dest

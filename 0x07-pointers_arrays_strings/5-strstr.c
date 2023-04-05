@@ -1,31 +1,26 @@
 #include "main.h"
-
 /**
- * *_strstr - search world on string
- * @haystack: string to get the result
- * @needle: is the string to search
- * Return: return the value of function
+ * _strstr - locates a substring.
+ * @haystack: string to be searched.
+ * @needle: substring to be located.
+ *
+ * Return: return string or null
+ *
  */
 
 char *_strstr(char *haystack, char *needle)
 {
-	char *h, *n;
+	int i;
 
 	while (*haystack)
 	{
-		h = haystack;
-		n = needle;
-		haystack++;
-
-		while (*h && *n && (*h == *n))
+		for (i = 0; needle[i] && haystack[i] == needle[i]; i++)
 		{
-			h++;
-			n++;
+			/*do nothing*/
 		}
-
-		if (*n == '\0')
+		if (needle[i] == '\0')
 			return (haystack);
+		haystack++;
 	}
-
 	return ('\0');
 }

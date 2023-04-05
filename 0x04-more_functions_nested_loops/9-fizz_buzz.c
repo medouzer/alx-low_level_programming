@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - Prints the numbers from 1-100.
- *
- * Return: Always 0.
+ * main - prints fizz if 3 and buzz if 5
+ * Return: return the number 0
  */
 int main(void)
 {

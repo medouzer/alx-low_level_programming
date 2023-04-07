@@ -33,12 +33,12 @@ int test_prime(int n, int a)
 	{
 		return (1);
 	}
-	else if (m > 0 && n % a == 0)
+	else if (a > 0 && n % a == 0)
 	{
 		return (0);
 	}
 	else
 	{
-		return (test_prime(n, m - 1));
+		return (test_prime(n, a - 1));
 	}
 }

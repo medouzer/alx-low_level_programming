@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 			for (j = 0; j < length; ++j)
 			{
-				if (isdigit(str[j]) == 0)
+				if (!isdigit(str[j]))
 				{
 					printf("Error\n");
 					return (1);

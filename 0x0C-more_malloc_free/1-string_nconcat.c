@@ -5,7 +5,7 @@
  * string_nconcat - concatenates two strings
  * @s1: string 1
  * @s2: string 2
- * n: size of memory s2 that we use
+ * @n: size of memory s2 that we use
  * Return: return pionter contain 2 string
  */
 

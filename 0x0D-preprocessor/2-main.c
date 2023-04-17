@@ -2,7 +2,7 @@
 
 
 /**
- * main prints the name of the file compiled from
+ * main - prints the name of the file compiled from
  * Return: return 0
  */
 

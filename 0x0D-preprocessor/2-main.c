@@ -3,9 +3,12 @@
 
 /**
  * main prints the name of the file compiled from
+ * Return: return 0
  */
 
-void main(void)
+int main(void)
 {
-	printf("%s\n, __FILE__);
+	printf("%s\n", __FILE__);
+
+	return(0);
 }

@@ -3,18 +3,17 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - prints all the char, int, float and char*
- * @format: the format of the arg to prints
- * @...: is all the arg to print
+ * print_all - prints all the char, int, float and string
+ * @format: the format of the arg to print
+ * @...: all the arg to print
  */
 
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *str;
-	char *separator = "";
-
 	va_list ap;
+	char *str,
+	char *separator = "";
+	int i = 0;
 
 	va_start(ap, format);
 	while (format && format[i])
@@ -37,7 +36,7 @@ void print_all(const char * const format, ...)
 					printf("%s%s", separator, str);
 					break;
 				}
-				printf("(nil)");
+				printf(", (nil)");
 				break;
 			default:
 				i++;
@@ -46,7 +45,6 @@ void print_all(const char * const format, ...)
 		separator = ", ";
 		i++;
 	}
-
+	va_end(ap;
 	printf("\n");
-	va_end(ap);
 }

@@ -11,7 +11,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	char *str,
+	char *str;
 	char *separator = "";
 	int i = 0;
 
@@ -45,6 +45,6 @@ void print_all(const char * const format, ...)
 		separator = ", ";
 		i++;
 	}
-	va_end(ap;
+	va_end(ap);
 	printf("\n");
 }

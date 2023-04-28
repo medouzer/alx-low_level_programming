@@ -1,5 +1,7 @@
-#ifndef LISTS_H
-#define LISTS_H
+#ifndef lists_h
+#define lists_h
+
+#include <string.h>
 
 /**
  * struct list_s - singly linked list

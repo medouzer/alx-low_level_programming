@@ -10,7 +10,7 @@
 
 size_t print_list(const list_t *h)
 {
-	int counter;
+	size_t counter;
 
 	for (counter = 0; h != NULL; counter++)
 	{

@@ -8,10 +8,12 @@
 
 void print_binary(unsigned long int n)
 {
+	unsigned long int cur;
 	if (n == 0 || n == 1)
 		putchar(n);
-	if (n > 1)
-		print_binary(n >> 1);
+	cur = n;
+	if (cur > 1)
+		print_binary(cur >> 1);
 
-	putchar((n & 1) + '0');
+	putchar((cur & 1) + '0');
 }

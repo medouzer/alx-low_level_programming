@@ -9,11 +9,25 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int cur;
-	if (n == 0 || n == 1)
-		putchar(n);
-	cur = n;
-	if (cur > 1)
-		print_binary(cur >> 1);
+	int len = 0;
 
-	putchar((cur & 1) + '0');
+	if (n == 0)
+	{
+		putchar('0');
+		return;
+	}
+
+	cur = n;
+	while ((cur >>= 1) > 0)
+		len++;
+
+	while (len >= 0)
+	{
+		if ((n >> len ) & 1)
+			putchar('1');
+		else
+			putchar('0');
+
+		len--;
+	}
 }

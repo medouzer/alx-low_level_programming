@@ -3,7 +3,7 @@
 
 /**
  * set_bit - replace a bit with 1 at index
- * @n: is the pointer of the number 
+ * @n: is the pointer of the number
  * @index: is the index where we make change
  * Return: 1 if workd or -1 if not
  */

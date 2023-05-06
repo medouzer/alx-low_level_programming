@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 
 	while (len >= 0)
 	{
-		if ((n >> len ) & 1)
+		if ((n >> len) & 1)
 			putchar('1');
 		else
 			putchar('0');

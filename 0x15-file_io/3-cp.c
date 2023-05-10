@@ -3,6 +3,27 @@
 #include <stdlib.h>
 
 /**
+ * cp_error - function return the error about the file
+ * @file_from: is the file to copie
+ * @file_to: is the file to put the copie
+ * @argv: is the argument content the name of the file
+ */
+
+void cp_error(int file_from, int file_to, char *argv[])
+{
+	if (file_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
+}
+
+/**
  * main - is the function to copie the content from file to onther one
  * @argc: is the number of argument
  * @argv: is the argument
@@ -22,32 +43,21 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
-	if (file_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+	cp_error(file_from, 0, argv);
 	file_to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
-	if (file_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close(file_from);
-		exit(99);
-	}
+	cp_error(0, file_to, argv);
 	r = 1024;
 	while (r == 1024)
 	{
 		r = read(file_from, buffer, letters);
 		if (r == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
+			cp_error(r, 0, argv);
 		}
 		w = write(file_to, buffer, r);
 		if (w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
+			cp_error(0, w, argv);
 		}
 	}
 	free(buffer);

@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage:cp file_form file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_form file_to\n");
 		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 	}
 	if (close(file_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't clode fd %d\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
 

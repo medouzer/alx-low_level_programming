@@ -33,7 +33,6 @@ void cp_error(int file_from, int file_to, char *argv[])
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
-	int letters = 1024;
 	ssize_t r, w;
 	char buffer[1024];
 
@@ -44,12 +43,12 @@ int main(int argc, char *argv[])
 	}
 	file_from = open(argv[1], O_RDONLY);
 	cp_error(file_from, 0, argv);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	cp_error(0, file_to, argv);
 	r = 1024;
 	while (r == 1024)
 	{
-		r = read(file_from, buffer, letters);
+		r = read(file_from, buffer, 1024);
 		if (r == -1)
 			cp_error(r, 0, argv);
 		w = write(file_to, buffer, r);

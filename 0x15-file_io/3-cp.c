@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	int file_from, file_to;
 	int letters = 1024;
 	ssize_t r, w;
-	char *buffer = malloc(sizeof(char) * letters);
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
 		if (w == -1)
 			cp_error(0, w, argv);
 	}
-	free(buffer);
 	if (close(file_from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);

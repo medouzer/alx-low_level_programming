@@ -32,7 +32,7 @@ void cp_error(int file_from, int file_to, char *argv[])
 
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, closer;
+	int file_from, file_to;
 	int letters = 1024;
 	ssize_t r, w;
 	char buffer[1024];
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	}
 	file_from = open(argv[1], O_RDONLY);
 	cp_error(file_from, 0, argv);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_APPEND | O_TRUNC, 0664);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	cp_error(0, file_to, argv);
 	r = 1024;
 	while (r == 1024)
@@ -56,14 +56,12 @@ int main(int argc, char *argv[])
 		if (w == -1)
 			cp_error(0, w, argv);
 	}
-	closer = close(file_from);
-	if (closer == -1)
+	if (close(file_from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-	closer = close(file_to);
-	if (closer == -1)
+	if (close(file_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);

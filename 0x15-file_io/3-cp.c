@@ -32,7 +32,7 @@ void cp_error(int file_from, int file_to, char *argv[])
 
 int main(int argc, char *argv[])
 {
-	int file_from, file_to;
+	int file_from, file_to, closer;
 	int letters = 1024;
 	ssize_t r, w;
 	char buffer[1024];
@@ -56,7 +56,8 @@ int main(int argc, char *argv[])
 		if (w == -1)
 			cp_error(0, w, argv);
 	}
-	if (close(file_from) == -1)
+	closer = close(file_from);
+	if (closer == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);

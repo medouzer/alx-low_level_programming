@@ -50,10 +50,10 @@ int main(int argc, char *argv[])
 	{
 		r = read(file_from, buffer, 1024);
 		if (r == -1)
-			cp_error(-1, 0, argv);
+			cp_error(r, 0, argv);
 		w = write(file_to, buffer, r);
 		if (w == -1)
-			cp_error(0, -1, argv);
+			cp_error(0, w, argv);
 	}
 	if (close(file_from) == -1)
 	{

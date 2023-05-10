@@ -33,7 +33,7 @@ void cp_error(int file_from, int file_to, char *argv[])
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
-	size_t letters = 1024;
+	int letters = 1024;
 	ssize_t r, w;
 	char *buffer = malloc(sizeof(char) * letters);
 

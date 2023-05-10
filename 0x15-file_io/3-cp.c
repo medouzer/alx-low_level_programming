@@ -42,9 +42,9 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
-	cp_error(file_from, 0, argv);
+	/*cp_error(file_from, 0, argv);*/
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	cp_error(0, file_to, argv);
+	cp_error(file_from, file_to, argv);
 	r = 1024;
 	while (r == 1024)
 	{

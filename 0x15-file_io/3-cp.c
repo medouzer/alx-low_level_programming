@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to;
 	size_t letters = 1024;
-	int r, w;
+	ssize_t r, w;
 	char *buffer = malloc(sizeof(char) * letters);
 
 	if (argc != 3)
@@ -51,14 +51,10 @@ int main(int argc, char *argv[])
 	{
 		r = read(file_from, buffer, letters);
 		if (r == -1)
-		{
 			cp_error(r, 0, argv);
-		}
 		w = write(file_to, buffer, r);
 		if (w == -1)
-		{
 			cp_error(0, w, argv);
-		}
 	}
 	free(buffer);
 	if (close(file_from) == -1)

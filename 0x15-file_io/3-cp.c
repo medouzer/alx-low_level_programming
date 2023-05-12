@@ -33,7 +33,7 @@ void cp_error(int file_from, int file_to, char *argv[])
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
-	ssize_t r, w;
+	int r, w;
 	char buffer[1024];
 
 	if (argc != 3)

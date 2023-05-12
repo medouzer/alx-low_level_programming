@@ -45,10 +45,8 @@ int main(int argc, char *argv[])
 	cp_error(file_from, 0, argv);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	cp_error(0, file_to, argv);
-	r = 1024;
-	while (r != '\0')
+	while ((r = read(file_from, buffer, 1024)))
 	{
-		r = read(file_from, buffer, 1024);
 		if (r == -1)
 			cp_error(r, 0, argv);
 		w = write(file_to, buffer, r);

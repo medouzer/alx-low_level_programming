@@ -1,6 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
 
 /**
  * cp_error - function return the error about the file
@@ -43,7 +46,7 @@ int main(int argc, char *argv[])
 	}
 	file_from = open(argv[1], O_RDONLY);
 	cp_error(file_from, 0, argv);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0674);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	cp_error(0, file_to, argv);
 	r = 1024;
 	while (r == 1024)

@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	cp_error(0, file_to, argv);
 	r = 1024;
-	while (r > 0)
+	while (r == 1024)
 	{
 		r = read(file_from, buffer, 1024);
 		if (r == -1)

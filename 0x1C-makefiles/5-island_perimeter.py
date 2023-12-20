@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Island Perimeter"""
 
+
 def island_perimeter(grid):
     """island_perimeter finction"""
     perimeter = 0
@@ -28,3 +29,4 @@ def island_perimeter(grid):
                 else:
                     perimeter += 1
     return perimeter
+

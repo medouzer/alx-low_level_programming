@@ -29,4 +29,3 @@ def island_perimeter(grid):
                 else:
                     perimeter += 1
     return perimeter
-
